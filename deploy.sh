@@ -67,4 +67,3 @@ setup_hosts()
 if [ "$(basename $0)" == "bash" ]; then
 	echo "Please run the script with ./deploy.sh not sh deploy.sh"
 else
-
