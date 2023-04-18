@@ -84,5 +84,5 @@ else
 	#synchome
 	user_cron_jobs
 	sudo systemctl enable tlp.service
-	sudo su && root_cron_jobs
+	
 fi
