@@ -1,19 +1,5 @@
 #-My rice deploy script, runs after https://larbs.xyz/larbs.sh.
 #-Maybe i will write my own one day but now this script just sets up things specific to my setup.
-
-# Have a cronjob to check for updates every hour
-root_cron_jobs()
-{
-	(crontab -l ; echo "0 * * * * pacman -Sy >/dev/null") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-}
-
-# Cronjobs for low battery warning and log the time i spend on computer.
-user_cron_jobs()
-{
-	(crontab -l ; echo "*/2 * * * * ~/.local/bin/batsinal >/dev/null 2>&1") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-	(crontab -l ; echo "* * * * * ~/.local/bin/datelog >/dev/null 2>&1	") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-}
-
 # Copies my scripts from the repository to my home directory
 synchome()
 {
